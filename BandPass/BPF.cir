@@ -1,0 +1,21 @@
+* C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandPass\BPF.sch
+
+* Schematics Version 9.2
+* Sat Apr 03 02:15:36 2021
+
+
+
+** Analysis setup **
+.ac DEC 100 1 1G
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "BPF.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

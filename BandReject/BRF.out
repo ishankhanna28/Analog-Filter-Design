@@ -1,0 +1,207 @@
+
+**** 04/11/21 02:45:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandReject\BRF.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sat Apr 03 21:28:22 2021
+
+
+
+** Analysis setup **
+.ac DEC 100 30 3k
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "BRF.net"
+
+
+
+**** INCLUDING BRF.net ****
+* Schematics Netlist *
+
+
+
+C_C1         0 $N_0001  0.1u  
+R_R2         $N_0002 0  2k  
+R_R3         $N_0004 $N_0003  10k  
+R_R5         $N_0003 Vo  10k  
+V_V2         V+ 0 12v
+V_V3         0 V- 12v
+X_U2         0 $N_0003 V+ V- Vo LM741
+X_U3         $N_0002 $N_0004 V+ V- $N_0004 LM741
+X_U1         $N_0001 $N_0009 V+ V- $N_0009 LM741
+R_R4         $N_0009 $N_0003  10k  
+R_R1         Vi $N_0001  8k  
+C_C2         Vi $N_0002  0.1u  
+V_V1         Vi 0 DC 0V AC 1V 
+
+**** RESUMING BRF.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 04/11/21 02:45:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandReject\BRF.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.x_lm741.dx X_U2.x_lm741.dy X_U3.x_lm741.dx X_U3.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U1.x_lm741.dx X_U1.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 04/11/21 02:45:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandReject\BRF.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.x_lm741.qx X_U3.x_lm741.qx X_U1.x_lm741.qx 
+               NPN             NPN             NPN             
+          IS  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75           93.75         
+          NF    1               1               1            
+          BR    1               1               1            
+          NR    1               1               1            
+          CN    2.42            2.42            2.42         
+           D     .87             .87             .87         
+
+
+**** 04/11/21 02:45:08 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandReject\BRF.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)   12.0000  (   V-)  -12.0000  (   Vi)    0.0000  (   Vo)     .0016      
+
+($N_0001)-637.8E-06                   ($N_0002)-159.5E-06                       
+
+($N_0003) 19.24E-06                   ($N_0004)-140.2E-06                       
+
+($N_0009)-618.5E-06                   (X_U1.x_lm741.6) 57.82E-09                
+
+(X_U1.x_lm741.7)-617.7E-06            (X_U1.x_lm741.8)-617.7E-06                
+
+(X_U1.x_lm741.9)    0.0000            (X_U2.x_lm741.6)-154.7E-09                
+
+(X_U2.x_lm741.7)     .0016            (X_U2.x_lm741.8)     .0016                
+
+(X_U2.x_lm741.9)    0.0000            (X_U3.x_lm741.6) 12.05E-09                
+
+(X_U3.x_lm741.7)-137.0E-06            (X_U3.x_lm741.8)-137.0E-06                
+
+(X_U3.x_lm741.9)    0.0000            (X_U1.x_lm741.10)    -.6083               
+
+(X_U1.x_lm741.11)   11.9600           (X_U1.x_lm741.12)   11.9600               
+
+(X_U1.x_lm741.13)    -.5944           (X_U1.x_lm741.14)    -.5944               
+
+(X_U1.x_lm741.53)   11.0000           (X_U1.x_lm741.54)  -11.0000               
+
+(X_U1.x_lm741.90) 15.99E-06           (X_U1.x_lm741.91)   40.0000               
+
+(X_U1.x_lm741.92)  -40.0000           (X_U1.x_lm741.99)    0.0000               
+
+(X_U2.x_lm741.10)    -.6077           (X_U2.x_lm741.11)   11.9600               
+
+(X_U2.x_lm741.12)   11.9600           (X_U2.x_lm741.13)    -.5938               
+
+(X_U2.x_lm741.14)    -.5938           (X_U2.x_lm741.53)   11.0000               
+
+(X_U2.x_lm741.54)  -11.0000           (X_U2.x_lm741.90) 159.5E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           (X_U3.x_lm741.10)    -.6078               
+
+(X_U3.x_lm741.11)   11.9600           (X_U3.x_lm741.12)   11.9600               
+
+(X_U3.x_lm741.13)    -.5939           (X_U3.x_lm741.14)    -.5940               
+
+(X_U3.x_lm741.53)   11.0000           (X_U3.x_lm741.54)  -11.0000               
+
+(X_U3.x_lm741.90) 63.82E-06           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -4.010E-03
+    V_V3        -4.010E-03
+    V_V1        -7.973E-08
+    X_U2.x_lm741.vb  -1.547E-12
+    X_U2.x_lm741.vc   1.100E-11
+    X_U2.x_lm741.ve   1.091E-11
+    X_U2.x_lm741.vlim   1.595E-07
+    X_U2.x_lm741.vlp  -4.000E-11
+    X_U2.x_lm741.vln  -4.000E-11
+    X_U3.x_lm741.vb   1.205E-13
+    X_U3.x_lm741.vc   1.100E-11
+    X_U3.x_lm741.ve   1.091E-11
+    X_U3.x_lm741.vlim   6.382E-08
+    X_U3.x_lm741.vlp  -4.000E-11
+    X_U3.x_lm741.vln  -4.000E-11
+    X_U1.x_lm741.vb   5.782E-13
+    X_U1.x_lm741.vc   1.100E-11
+    X_U1.x_lm741.ve   1.091E-11
+    X_U1.x_lm741.vlim   1.599E-08
+    X_U1.x_lm741.vlp  -4.000E-11
+    X_U1.x_lm741.vln  -4.000E-11
+
+    TOTAL POWER DISSIPATION   9.62E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

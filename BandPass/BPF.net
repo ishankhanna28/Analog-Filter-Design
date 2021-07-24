@@ -1,0 +1,14 @@
+* Schematics Netlist *
+
+
+
+R_R1         Vi $N_0001  1k  
+R_R3         $N_0003 $N_0002  1k  
+R_R4         0 $N_0003  1k  
+X_U1         $N_0001 $N_0003 V+ V- $N_0002 uA741
+V_V3         Vi 0 DC 0V AC 1V 
+C_C2         0 Vi  0.1n  
+C_C1         $N_0002 Vo  0.2n  
+V_V1         V+ 0 12v
+V_V2         0 V- 12v
+R_R2         0 Vo  10k  

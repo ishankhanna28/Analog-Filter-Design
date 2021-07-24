@@ -1,0 +1,152 @@
+
+**** 04/11/21 02:43:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandPass\BPF.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sat Apr 03 02:15:36 2021
+
+
+
+** Analysis setup **
+.ac DEC 100 1 1G
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "BPF.net"
+
+
+
+**** INCLUDING BPF.net ****
+* Schematics Netlist *
+
+
+
+R_R1         Vi $N_0001  1k  
+R_R3         $N_0003 $N_0002  1k  
+R_R4         0 $N_0003  1k  
+X_U1         $N_0001 $N_0003 V+ V- $N_0002 uA741
+V_V3         Vi 0 DC 0V AC 1V 
+C_C2         0 Vi  0.1n  
+C_C1         $N_0002 Vo  0.2n  
+V_V1         V+ 0 12v
+V_V2         0 V- 12v
+R_R2         0 Vo  10k  
+
+**** RESUMING BPF.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 04/11/21 02:43:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandPass\BPF.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         X_U1.dy         
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 04/11/21 02:43:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandPass\BPF.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         
+               NPN             
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 04/11/21 02:43:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\BandPass\BPF.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V+)   12.0000  (   V-)  -12.0000  (   Vi)    0.0000  (   Vo)    0.0000      
+
+(X_U1.6) 3.351E-09 (X_U1.7)-40.21E-06 (X_U1.8)-40.21E-06 (X_U1.9)    0.0000     
+
+($N_0001)-79.73E-06                   ($N_0002)-41.18E-06                       
+
+($N_0003)-60.47E-06                   (X_U1.10)    -.6077                       
+
+(X_U1.11)   11.9600                   (X_U1.12)   11.9600                       
+
+(X_U1.13)    -.5939                   (X_U1.14)    -.5939                       
+
+(X_U1.53)   11.0000                   (X_U1.54)  -11.0000                       
+
+(X_U1.90) 19.29E-06                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -7.973E-08
+    V_V1        -1.337E-03
+    V_V2        -1.337E-03
+    X_U1.vb      3.351E-14
+    X_U1.vc      1.100E-11
+    X_U1.ve      1.091E-11
+    X_U1.vlim    1.929E-08
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   3.21E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .06
+

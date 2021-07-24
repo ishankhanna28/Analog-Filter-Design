@@ -1,0 +1,21 @@
+* C:\Users\Ishan's PC\Desktop\Sem 4\Projects\LIC\Innovative Project\HighPass\HPF.sch
+
+* Schematics Version 9.2
+* Wed Mar 24 20:27:10 2021
+
+
+
+** Analysis setup **
+.ac DEC 10 0.1 1Meg
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "HPF.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
